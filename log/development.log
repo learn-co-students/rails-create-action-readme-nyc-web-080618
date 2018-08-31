@@ -40,3 +40,81 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-08-31 13:43:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 31ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2018-08-31 13:44:02 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.7ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 435ms (Views: 428.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-08-31 13:44:18 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2018-08-31 13:44:30 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2018-08-31 13:44:47 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 36ms (Views: 26.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-08-31 13:45:12 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-08-31 13:45:20 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oRhwWshhJmnXMOdR8myZEc54/7lJ+Bih1XJLovgkiLciOxI0WlcfpUEKm7LSpiFe8Cy+lg0fZuVLnx4NjEq0vQ==", "title"=>"abc", "description"=>"funny", "commit"=>"Submit Post"}
+
+
+Started GET "/posts" for ::1 at 2018-08-31 13:49:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 257ms (Views: 244.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-08-31 13:49:59 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-08-31 13:50:07 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEBqJDzm4Dr4nUdRq+Uk6kIUUJkUzCbC4PULV9tmmaA/YwhKrtDZ9m6nO7KLL5ylfEARtlArWIZ+GF74rwilqg==", "title"=>"abc", "description"=>"funny", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "abc"], ["description", "funny"], ["created_at", "2018-08-31 17:50:07.449563"], ["updated_at", "2018-08-31 17:50:07.449563"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 9ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/2" for ::1 at 2018-08-31 13:50:07 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 26.3ms | ActiveRecord: 0.3ms)
